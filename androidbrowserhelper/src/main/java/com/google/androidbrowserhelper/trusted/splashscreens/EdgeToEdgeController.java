@@ -27,15 +27,15 @@ public class EdgeToEdgeController {
         navigationBarProtection = new ColorProtection(WindowInsetsCompat.Side.BOTTOM, defaultColor);
     }
 
-    public FrameLayout getWrapperView() {
+    public FrameLayout getWrapperView(View originalView) {
         FrameLayout rootView = new FrameLayout(mActivity);
         rootView.setLayoutParams(new ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT));
 
         ProtectionLayout protectionLayout = new ProtectionLayout(mActivity,
                 ImmutableList.of(statusBarProtection, navigationBarProtection));
         rootView.addView(protectionLayout);
+        protectionLayout.addView(originalView);
         protectionLayout.setVisibility(View.VISIBLE);
-        protectionLayout.setElevation(1f);
         return rootView;
     }
 
