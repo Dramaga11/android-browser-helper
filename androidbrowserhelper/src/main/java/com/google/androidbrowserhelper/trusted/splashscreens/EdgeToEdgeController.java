@@ -30,9 +30,6 @@ public class EdgeToEdgeController {
     public FrameLayout getWrapperView() {
         FrameLayout rootView = new FrameLayout(mActivity);
         rootView.setLayoutParams(new ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT));
-        ViewCompat.setOnApplyWindowInsetsListener(mActivity.getWindow().getDecorView(), (v, insets) -> insets);
-
-
 
         ProtectionLayout protectionLayout = new ProtectionLayout(mActivity,
                 ImmutableList.of(statusBarProtection, navigationBarProtection));

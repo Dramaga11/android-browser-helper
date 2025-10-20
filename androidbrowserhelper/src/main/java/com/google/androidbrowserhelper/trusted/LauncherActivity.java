@@ -14,8 +14,6 @@
 
 package com.google.androidbrowserhelper.trusted;
 
-import static androidx.core.view.WindowCompat.enableEdgeToEdge;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -24,6 +22,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -134,7 +133,9 @@ public class LauncherActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        enableEdgeToEdge(getWindow());
+
+        WindowCompat.enableEdgeToEdge(getWindow());
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
         mStartupUptimeMillis = SystemClock.uptimeMillis();
         sLauncherActivitiesAlive++;
