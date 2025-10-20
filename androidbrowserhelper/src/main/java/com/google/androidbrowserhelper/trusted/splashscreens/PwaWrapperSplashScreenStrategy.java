@@ -133,7 +133,7 @@ public class PwaWrapperSplashScreenStrategy implements SplashScreenStrategy {
             return;
         }
 
-        mEdgeToEdgeController = new EdgeToEdgeController(mActivity);
+        mEdgeToEdgeController = new EdgeToEdgeController(mActivity, mBackgroundColor);
 
         showSplashScreen();
         if (mSplashImage != null) {
@@ -162,7 +162,7 @@ public class PwaWrapperSplashScreenStrategy implements SplashScreenStrategy {
             view.setImageMatrix(mTransformationMatrix);
         }
 
-        FrameLayout rootView = mEdgeToEdgeController.getWrapperView(mBackgroundColor);
+        FrameLayout rootView = mEdgeToEdgeController.getWrapperView();
         rootView.addView(view);
         mActivity.setContentView(rootView);
     }
