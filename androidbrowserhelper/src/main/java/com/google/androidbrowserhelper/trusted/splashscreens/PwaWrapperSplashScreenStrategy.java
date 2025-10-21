@@ -25,7 +25,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.google.androidbrowserhelper.trusted.Utils;
@@ -162,8 +161,8 @@ public class PwaWrapperSplashScreenStrategy implements SplashScreenStrategy {
             view.setImageMatrix(mTransformationMatrix);
         }
 
-        FrameLayout rootView = mEdgeToEdgeController.getWrapperView(view);
-        mActivity.setContentView(rootView);
+        mEdgeToEdgeController.setOriginalView(view);
+        mActivity.setContentView(mEdgeToEdgeController.getWrapperView());
     }
 
     /**
