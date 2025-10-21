@@ -161,7 +161,7 @@ public class PwaWrapperSplashScreenStrategy implements SplashScreenStrategy {
             view.setImageMatrix(mTransformationMatrix);
         }
 
-        mEdgeToEdgeController.setOriginalView(view);
+        mEdgeToEdgeController.addView(view);
         mActivity.setContentView(mEdgeToEdgeController.getWrapperView());
     }
 

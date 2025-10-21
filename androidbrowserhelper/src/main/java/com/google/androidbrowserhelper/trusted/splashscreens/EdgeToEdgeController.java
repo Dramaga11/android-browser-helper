@@ -42,7 +42,7 @@ public class EdgeToEdgeController {
         return mRootView;
     }
 
-    public void setOriginalView(View originalView) {
+    public void addView(View originalView) {
         mProtectionLayout.addView(originalView);
     }
 
