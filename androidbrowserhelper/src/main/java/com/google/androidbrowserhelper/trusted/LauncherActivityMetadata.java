@@ -290,7 +290,7 @@ public class LauncherActivityMetadata {
         
         if (includeExperimental) {
             if ("window-controls-overlay".equals(displayMode)) {
-                return new TrustedWebActivityDisplayMode.WindowControlsOverlay();
+                return new TrustedWebActivityDisplayMode.WindowControlsOverlayMode();
             }
             if ("tabbed".equals(displayMode)) {
                 return new TrustedWebActivityDisplayMode.TabbedMode();
